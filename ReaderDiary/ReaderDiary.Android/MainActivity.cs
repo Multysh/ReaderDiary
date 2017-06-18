@@ -1,16 +1,13 @@
-﻿using System;
-
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-
-namespace ReaderDiary.Droid
+﻿namespace ReaderDiary.Droid
 {
+    using Android.App;
+    using Android.Content.PM;
+    using Android.OS;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Platform.Android;
+
     [Activity(Label = "ReaderDiary", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -19,7 +16,7 @@ namespace ReaderDiary.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            Forms.Init(this, bundle);
             LoadApplication(new App());
         }
     }
